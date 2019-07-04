@@ -1,0 +1,71 @@
+hop_size
+Project description
+LWS
+===
+
+**Fast spectrogram phase recovery using Local Weighted Sums (LWS)**
+lws: used to generate spectrogram
+grifflin lim: This is a python implementation of Griffin and Lim's algorithm to recover an audio signal given only the magnitude of its Short-Time Fourier Transform (STFT), also known as the spectrogram.######(use spectrogram to generate audio signal like a vocoder? waveglow and wavernn?)
+
+The short-time Fourier transform (STFT), is a Fourier-related transform used to determine the sinusoidal frequency and phase content of local sections of a signal as it changes over time.
+
+  has_inputs = "inputs" in encoders (what is the grammar implied here?)
+  modality 形态
+  hop_size:跳步距离
+  win_size：汉明窗距离
+
+  what is the difference between waveglow and wavernn ?
+
+
+  ljspeech_problem.py 后面没看，主要针对这个数据集的，所以可能要在这个文件修改	
+  An underscore (_) at the beginning is used to denote private variables in Python.
+  property(fget=None, fset=None, fdel=None, doc=None) 	
+  # make empty property
+temperature = property()
+# assign fget
+temperature = temperature.getter(get_temperature)
+# assign fset
+temperature = temperature.setter(set_temperature)
+
+class Celsius:
+    def __init__(self, temperature = 0):
+        self._temperature = temperature
+
+    def to_fahrenheit(self):
+        return (self.temperature * 1.8) + 32
+
+    @property
+    def temperature(self):
+        print("Getting value")
+        return self._temperature
+        #when call c.temperature, it will automatically call the function temperature() because it is considered a property
+        # in other word, to print the attibute as well as use the built fucntion, we use a decorator called property to decorate the function,
+        #so it can be used like a property(the real property is private!), thus we can add any thing we like while not change the other code
+
+    @temperature.setter
+    def temperature(self, value):
+        if value < -273:
+            raise ValueError("Temperature below -273 is not possible")
+        print("Setting value")
+        self._temperature = value
+@property
+def foo(self): return self._foo
+really means the same thing as
+
+def foo(self): return self._foo
+foo = property(foo)
+
+
+有关于speech_problem，并不是非常理解，用处未知？
+speech_model大概是模型什么的，暂时不要管
+na_speech_model也一样不管，
+Dynamic range compression (DRC) or simply compression is an audio signal processing operation that reduces the volume of loud sounds or amplifies quiet sounds thus reducing or compressing an audio signal's dynamic range.
+dB = 10*log10(Amp)
+
+Normal distributions come up time and time again in statistics. A normal distribution has some interesting properties: it has a bell shape, the mean and median are equal, and 68% of the data falls within 1 standard deviation. （understand normalize and normal) avoid overfitting????
+So is the word normal the same meaning in statistics and deeplearning?
+
+numpy.pad 对给出的数组进行填充，主要是为了格式的统一性	
+so what is time resolution? 
+
+init.py 使用在data-generate上的需要import的模块
