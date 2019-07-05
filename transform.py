@@ -20,7 +20,7 @@
 """
 # #我懂了，中文的标点符号仍旧使用中文，这样就不会造成csv的格式错误了！
 import re
-filepath=r"C:\Users\lenovo\Desktop\meta_phone.txt"
+filepath=r"/mnt/guanyu/tensor2tensor-speech/newdata/LJSpeech-1.1/metadata_phone.txt"
 fp = open(filepath,"r")
 b=fp.readlines()
 length=len(b)
