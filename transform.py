@@ -24,7 +24,7 @@ filepath=r"/mnt/guanyu/tensor2tensor-speech/newdata/LJSpeech-1.1/metadata_phone.
 fp = open(filepath,"r")
 b=fp.readlines()
 length=len(b)
-with open(r"C:\Users\lenovo\Desktop\result.txt","w") as written_file:
+with open(r"/mnt/guanyu/tensor2tensor-speech/newdata/LJSpeech-1.1/metadata_phone.csv","w") as written_file:
     written_file.write("wav,txt2,phone2\n")
     for i in range(0,length,2):
         number_and_text=b[i]
